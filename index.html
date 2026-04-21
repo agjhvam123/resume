@@ -3,783 +3,1764 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>何佳明 - 嵌入式工程师简历</title>
+<title>何佳明 · 嵌入式工程师</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
-    background: #f5f5f5;
-    color: #222;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  /* ── 整体纸张容器 ── */
-  .page {
-    width: 860px;
-    margin: 30px auto;
-    background: #fff;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.12);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  /* ══════════════════════════════
-     顶部 Header
-  ══════════════════════════════ */
-  .header {
-    background: #1a2e45;
-    color: #fff;
-    padding: 28px 40px 22px;
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
-
-  .avatar {
-    width: 86px;
-    height: 86px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2196f3, #00bcd4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    flex-shrink: 0;
-    border: 3px solid rgba(255,255,255,0.3);
-  }
-
-  .header-info { flex: 1; }
-
-  .header-name {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 4px;
-  }
-
-  .header-title {
-    font-size: 13px;
-    color: #90caf9;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-
-  .header-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 20px;
-  }
-
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    color: #cfd8dc;
-  }
-
-  .meta-item .icon {
-    font-size: 13px;
-    opacity: 0.8;
-  }
-
-  /* ══════════════════════════════
-     主体双栏布局
-  ══════════════════════════════ */
-  .body-wrap {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  /* 左侧窄栏 */
-  .col-left {
-    width: 210px;
-    flex-shrink: 0;
-    background: #f7f9fb;
-    border-right: 1px solid #e8ecf0;
-    padding: 20px 18px;
-    min-height: 100%;
-  }
-
-  /* 右侧主栏 */
-  .col-right {
-    flex: 1;
-    padding: 20px 28px;
-  }
-
-  /* ══════════════════════════════
-     通用 Section 标题
-  ══════════════════════════════ */
-  .sec-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1a2e45;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #1a2e45;
-    margin-bottom: 12px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .sec-title:first-child { margin-top: 0; }
-
-  .sec-title-icon {
-    width: 18px;
-    height: 18px;
-    background: #1a2e45;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    color: #fff;
-  }
-
-  /* ══════════════════════════════
-     左侧：技能条
-  ══════════════════════════════ */
-  .skill-item {
-    margin-bottom: 10px;
-  }
-
-  .skill-name {
-    font-size: 12px;
-    color: #334155;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .skill-bar {
-    height: 5px;
-    background: #dde3ea;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .skill-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #1a2e45, #2196f3);
-  }
-
-  /* 左侧：标签组 */
-  .tag-group { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
-
-  .tag {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-weight: 500;
-  }
-
-  .tag-blue { background: #e3f2fd; color: #1565c0; }
-  .tag-green { background: #e8f5e9; color: #2e7d32; }
-  .tag-gray { background: #eceff1; color: #455a64; }
-
-  /* 左侧：小信息行 */
-  .left-info-item {
-    display: flex;
-    gap: 7px;
-    align-items: flex-start;
-    font-size: 12px;
-    color: #4a5568;
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-
-  .left-info-item .licon { color: #1a2e45; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-
-  /* ══════════════════════════════
-     右侧：教育经历
-  ══════════════════════════════ */
-  .edu-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px dashed #e8ecf0;
-  }
-  .edu-row:last-child { border-bottom: none; }
-
-  .edu-dot-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 5px;
-  }
-
-  .edu-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #1a2e45;
-    flex-shrink: 0;
-  }
-
-  .edu-line {
-    width: 2px;
-    flex: 1;
-    background: #c0cdd8;
-    min-height: 20px;
-    margin-top: 3px;
-  }
-
-  .edu-body { flex: 1; padding-bottom: 6px; }
-
-  .edu-school {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a2e45;
-  }
-
-  .edu-sub {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 4px;
-  }
-
-  .edu-time {
-    font-size: 11px;
-    color: #78909c;
-    margin-top: 3px;
-  }
-
-  /* ══════════════════════════════
-     右侧：实习 / 项目 通用块
-  ══════════════════════════════ */
-  .exp-block {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px dashed #e8ecf0;
-  }
-  .exp-block:last-child { border-bottom: none; margin-bottom: 0; }
-
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 6px;
-  }
-
-  .exp-company {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a2e45;
-  }
-
-  .exp-role {
-    font-size: 12px;
-    color: #2196f3;
-    font-weight: 600;
-    margin-top: 2px;
-  }
-
-  .exp-time {
-    font-size: 11px;
-    color: #fff;
-    background: #1a2e45;
-    padding: 2px 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .exp-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .exp-list li {
-    position: relative;
-    padding-left: 14px;
-    font-size: 12.5px;
-    color: #334155;
-    margin-bottom: 4px;
-    line-height: 1.65;
-  }
-
-  .exp-list li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: #2196f3;
-    font-size: 10px;
-    top: 3px;
-  }
-
-  /* ══════════════════════════════
-     项目经历
-  ══════════════════════════════ */
-  .proj-block {
-    margin-bottom: 16px;
-    padding: 12px 14px;
-    background: #f7f9fb;
-    border-left: 3px solid #1a2e45;
-    border-radius: 0 6px 6px 0;
-  }
-
-  .proj-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 5px;
-    gap: 10px;
-  }
-
-  .proj-title {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #1a2e45;
-  }
-
-  .proj-tags { display: flex; flex-wrap: wrap; gap: 4px; flex-shrink: 0; }
-
-  .proj-desc {
-    font-size: 12px;
-    color: #607d8b;
-    margin-bottom: 8px;
-    padding-bottom: 6px;
-    border-bottom: 1px dashed #dde3ea;
-    line-height: 1.6;
-  }
-
-  .proj-points { list-style: none; padding: 0; counter-reset: pt; }
-
-  .proj-points li {
-    counter-increment: pt;
-    position: relative;
-    padding-left: 22px;
-    font-size: 12.5px;
-    color: #334155;
-    margin-bottom: 5px;
-    line-height: 1.65;
-  }
-
-  .proj-points li::before {
-    content: counter(pt);
-    position: absolute;
-    left: 0;
-    top: 2px;
-    width: 15px;
-    height: 15px;
-    background: #1a2e45;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 10px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 15px;
-    text-align: center;
-  }
-
-  /* ══════════════════════════════
-     科研成果
-  ══════════════════════════════ */
-  .award-list { list-style: none; padding: 0; }
-
-  .award-list li {
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    padding: 5px 0;
-    border-bottom: 1px dashed #e8ecf0;
-    font-size: 12.5px;
-    color: #334155;
-    line-height: 1.6;
-  }
-
-  .award-list li:last-child { border-bottom: none; }
-
-  .award-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-
-  .award-badge {
-    display: inline-block;
-    font-size: 10px;
-    padding: 1px 6px;
-    border-radius: 3px;
-    font-weight: 600;
-    white-space: nowrap;
-    margin-left: 4px;
-    vertical-align: middle;
-  }
-
-  .badge-gold { background: #fff3e0; color: #e65100; border: 1px solid #ffcc02; }
-  .badge-silver { background: #f5f5f5; color: #546e7a; border: 1px solid #b0bec5; }
-  .badge-blue { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
-
-  /* ══════════════════════════════
-     技能特长（右栏）
-  ══════════════════════════════ */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .skill-card {
-    background: #f7f9fb;
-    border: 1px solid #e0e7ef;
-    border-radius: 6px;
-    padding: 10px 12px;
-  }
-
-  .skill-card-title {
-    font-size: 11.5px;
-    font-weight: 700;
-    color: #1a2e45;
-    margin-bottom: 7px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #dde3ea;
-  }
-
-  .skill-card .tag-group { margin: 0; }
-
-  /* ══════════════════════════════
-     个人荣誉
-  ══════════════════════════════ */
-  .honor-list { list-style: none; padding: 0; }
-
-  .honor-list li {
-    position: relative;
-    padding-left: 14px;
-    font-size: 12.5px;
-    color: #334155;
-    margin-bottom: 5px;
-    line-height: 1.6;
-  }
-
-  .honor-list li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    color: #f59e0b;
-    font-size: 9px;
-    top: 4px;
-  }
-
-  /* ══════════════════════════════
-     个人陈述
-  ══════════════════════════════ */
-  .statement {
-    background: #f7f9fb;
-    border-left: 3px solid #2196f3;
-    border-radius: 0 6px 6px 0;
-    padding: 12px 16px;
-    font-size: 12.5px;
-    color: #334155;
-    line-height: 1.8;
-  }
-
-  /* ══════════════════════════════
-     右侧 Section 间距
-  ══════════════════════════════ */
-  .col-right .sec-title { margin-top: 18px; }
-  .col-right .sec-title:first-child { margin-top: 0; }
+/* ═══════════════════════════════════════
+   全局重置 & 变量
+═══════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy:     #0d1b2a;
+  --navy2:    #1b2e45;
+  --blue:     #1e6fd9;
+  --blue-lt:  #3b8af0;
+  --cyan:     #00c2d4;
+  --gold:     #f0a500;
+  --sidebar-w: 260px;
+  --header-h:  72px;
+  --bg:       #f0f4f9;
+  --card-bg:  #ffffff;
+  --border:   #dce4ef;
+  --text:     #1e2d3d;
+  --text2:    #4a5f78;
+  --text3:    #7a90a8;
+  --shadow:   0 2px 16px rgba(13,27,42,0.10);
+  --radius:   10px;
+}
+
+html { font-size: 14px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════
+   顶部固定导航栏
+═══════════════════════════════════════ */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: rgba(13,27,42,0.97);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--cyan);
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.topbar-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.topbar-sub {
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: 1px;
+  margin-top: 1px;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  color: #fff;
+  background: rgba(30,111,217,0.35);
+  border-color: rgba(30,111,217,0.5);
+}
+
+.nav-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  letter-spacing: 0.5px;
+}
+
+.btn-download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(30,111,217,0.4);
+}
+
+/* ═══════════════════════════════════════
+   整体布局
+═══════════════════════════════════════ */
+.layout {
+  display: flex;
+  padding-top: var(--header-h);
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════
+   左侧固定侧边栏
+═══════════════════════════════════════ */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  bottom: 0;
+  background: var(--navy);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+.sidebar-profile {
+  padding: 28px 20px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(180deg, rgba(30,111,217,0.15) 0%, transparent 100%);
+}
+
+.profile-photo-wrap {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 12px;
+  position: relative;
+}
+
+/* ★ 修改：移除颜色旋转动画，改为静态渐变边框 */
+.profile-photo-ring {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  /* 原来有 animation: ringRotate，已删除 */
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--navy2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  border: 3px solid var(--navy);
+  overflow: hidden;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sidebar-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+.sidebar-pos {
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.sidebar-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(30,111,217,0.2);
+  border: 1px solid rgba(30,111,217,0.4);
+  color: #7ec8ff;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+.sidebar-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  padding: 0 4px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.65);
+}
+
+.contact-icon {
+  width: 22px;
+  height: 22px;
+  background: rgba(30,111,217,0.25);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.sidebar-menu {
+  padding: 16px 12px;
+  flex: 1;
+}
+
+.menu-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 8px;
+  margin: 14px 0 6px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.22s;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+
+.menu-item:hover {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.9);
+}
+
+.menu-item.active {
+  background: linear-gradient(135deg, rgba(30,111,217,0.35), rgba(0,194,212,0.15));
+  color: #fff;
+  border: 1px solid rgba(30,111,217,0.3);
+}
+
+.menu-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--blue), var(--cyan));
+  border-radius: 0 2px 2px 0;
+}
+
+.menu-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.06);
+  transition: background 0.22s;
+}
+
+.menu-item.active .menu-icon {
+  background: rgba(30,111,217,0.4);
+}
+
+.menu-badge {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: rgba(30,111,217,0.3);
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════
+   右侧主内容区
+═══════════════════════════════════════ */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  padding: 30px 36px 60px;
+  max-width: calc(100vw - var(--sidebar-w));
+}
+
+.section {
+  margin-bottom: 32px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.sec-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sec-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--navy2), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(30,111,217,0.3);
+}
+
+.sec-title-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 1px;
+}
+
+.sec-title-en {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ═══════════════════════════════════════
+   英雄区
+═══════════════════════════════════════ */
+#hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1a3a5c 100%);
+  border-radius: 16px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(13,27,42,0.2);
+}
+
+/* ═══════════════════════════════════════
+   卡片通用
+═══════════════════════════════════════ */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(13,27,42,0.13);
+}
+
+/* ═══════════════════════════════════════
+   ★ 教育经历卡片（重新设计 - 左右布局）
+═══════════════════════════════════════ */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.edu-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.25s;
+  cursor: default;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: row;     
+  position: relative;
+  padding-top: 4px;
+  align-items: stretch;    
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(13,27,42,0.14);
+  border-color: var(--blue);
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy2), var(--blue), var(--cyan));
+  z-index: 10;
+}
+
+.edu-card.highlight::before {
+  background: linear-gradient(90deg, var(--gold), #f97316, var(--gold));
+}
+
+.edu-content {
+  padding: 16px 20px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ★ 调整1：右侧风景图变长（加宽） */
+.edu-scene {
+  width: 250px;            /* 从 140px 增加到 180px */
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #1b2e45, #1e6fd9);
+  border-left: 1px solid var(--border);
+}
+
+.edu-school-row {
+  display: flex;
+  align-items: flex-start; /* 顶部对齐，适应多行标签 */
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.edu-emblem {
+  width: 46px;             /* 校徽也稍微变大一点 */
+  height: 46px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--navy2), var(--blue));
+  border-radius: 8px;
+  padding: 2px;
+}
+
+/* ★ 调整2：学校字体变大 */
+.edu-school {
+  font-size: 19px;         /* 从 16px 增加到 19px */
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+/* 学校名称下方的标签容器 */
+.school-sub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+/* 哈工程专属标识（字号变大） */
+.c9-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #7c1a1a, #b91c1c);
+  color: #fcd34d;
+  font-size: 11.5px;       /* 从 10.5px 变大 */
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(252,211,77,0.3);
+}
+
+/* ★ 调整3：专业和时间字体变大 */
+.edu-major {
+  font-size: 14px;         /* 从 12.5px 增加到 14px */
+  font-weight: 600;
+  color: var(--text2);
+  margin-bottom: 10px;
+}
+
+.edu-time {
+  font-size: 13px;         /* 从 11.5px 增加到 13px */
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+}
+
+/* ★ 调整4：普通标签字号和间距变大 */
+.edu-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-size: 12px;         /* 从 11px 增加到 12px */
+  font-weight: 600;
+  padding: 3px 10px;       /* 内边距增大，看起来更饱满 */
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.badge-navy   { background: #e8eef6; color: var(--navy2); }
+.badge-blue   { background: #dbeafe; color: #1d4ed8; }
+.badge-green  { background: #dcfce7; color: #15803d; }
+.badge-gold   { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.badge-red    { background: #fee2e2; color: #991b1b; }
+.badge-purple { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+.badge-teal   { background: #ccfbf1; color: #0f766e; border: 1px solid #5eead4; }
+
+/* ═══════════════════════════════════════
+   实习经历时间线
+═══════════════════════════════════════ */
+.timeline {
+  position: relative;
+  padding-left: 26px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--blue), var(--cyan), var(--border));
+  border-radius: 1px;
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.tl-item:last-child { margin-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -22px;
+  top: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--blue);
+  z-index: 1;
+  transition: all 0.2s;
+}
+
+.tl-item:hover .tl-dot {
+  background: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan), 0 0 12px rgba(0,194,212,0.4);
+}
+
+.tl-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  transition: all 0.25s;
+  cursor: default;
+}
+
+.tl-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 6px 24px rgba(13,27,42,0.12);
+  border-left: 3px solid var(--blue);
+}
+
+.tl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.tl-company {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+
+.tl-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--blue);
+  font-weight: 600;
+  background: #dbeafe;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+.tl-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--navy2), var(--blue));
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(30,111,217,0.3);
+}
+
+.tl-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.tl-list li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 5px;
+  line-height: 1.65;
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f4f9;
+}
+
+.tl-list li:last-child { border-bottom: none; }
+
+.tl-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════
+   项目经历
+═══════════════════════════════════════ */
+.proj-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.proj-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.25s;
+  cursor: default;
+}
+
+.proj-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(13,27,42,0.14);
+}
+
+.proj-card-top {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.proj-card-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.proj-card-desc {
+  font-size: 12.5px;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-top: 6px;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  flex-shrink: 0;
+  max-width: 200px;
+}
+
+.proj-card-body {
+  padding: 14px 22px 18px;
+}
+
+.proj-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--blue);
+  cursor: pointer;
+  padding: 8px 0 0;
+  border-top: 1px dashed var(--border);
+  margin-top: 10px;
+  user-select: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.proj-toggle:hover { color: var(--blue-lt); }
+
+.toggle-arrow {
+  transition: transform 0.3s;
+  font-size: 10px;
+}
+
+.proj-card.open .toggle-arrow { transform: rotate(180deg); }
+
+.proj-points-wrap {
+  display: none;
+  margin-top: 12px;
+}
+
+.proj-card.open .proj-points-wrap { display: block; }
+
+.proj-points {
+  list-style: none;
+  padding: 0;
+  counter-reset: pt;
+}
+
+.proj-points li {
+  counter-increment: pt;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12.5px;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.7;
+  padding: 8px 12px;
+  background: #f7f9fb;
+  border-radius: 7px;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.proj-points li:hover {
+  background: #edf3fc;
+  border-left-color: var(--blue);
+}
+
+.proj-points li::before {
+  content: counter(pt);
+  min-width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--navy2), var(--blue));
+  color: #fff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════
+   技能特长
+═══════════════════════════════════════ */
+.skills-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  transition: all 0.25s;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(13,27,42,0.12);
+  border-color: var(--blue);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-card-icon { font-size: 16px; }
+
+.skill-card-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.stag {
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 5px;
+  cursor: default;
+  transition: all 0.2s;
+}
+
+.stag:hover { transform: scale(1.05); }
+
+.stag-navy   { background: #e8eef6; color: var(--navy2); }
+.stag-blue   { background: #dbeafe; color: #1d4ed8; }
+.stag-cyan   { background: #cffafe; color: #0e7490; }
+.stag-green  { background: #dcfce7; color: #15803d; }
+.stag-gray   { background: #f1f5f9; color: #475569; }
+.stag-purple { background: #ede9fe; color: #6d28d9; }
+.stag-orange { background: #ffedd5; color: #c2410c; }
+
+/* ═══════════════════════════════════════
+   科研成果
+═══════════════════════════════════════ */
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.25s;
+  cursor: default;
+}
+
+.award-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 4px 20px rgba(13,27,42,0.12);
+  border-left: 3px solid var(--gold);
+}
+
+.award-medal {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.medal-gold   { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+.medal-silver { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); }
+.medal-blue   { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+.medal-paper  { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+
+.award-content { flex: 1; }
+
+.award-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+.award-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.level-national-gold   { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.level-national-silver { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+.level-province        { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+.level-paper           { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+.level-patent          { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+
+/* ═══════════════════════════════════════
+   个人陈述
+═══════════════════════════════════════ */
+.statement-card {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(13,27,42,0.2);
+}
+
+.statement-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 120px;
+  color: rgba(30,111,217,0.15);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.statement-text {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  line-height: 2;
+  position: relative;
+  z-index: 1;
+}
+
+.statement-text strong { color: var(--cyan); }
+
+/* ═══════════════════════════════════════
+   荣誉奖项
+═══════════════════════════════════════ */
+.honor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.honor-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--text);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: default;
+  box-shadow: var(--shadow);
+}
+
+.honor-item:hover {
+  background: #edf3fc;
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.honor-star {
+  color: var(--gold);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   滚动淡入动画
+═══════════════════════════════════════ */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   打印优化
+═══════════════════════════════════════ */
+@media print {
+  .topbar, .sidebar { display: none; }
+  .main { margin-left: 0; padding: 20px; }
+  .section { opacity: 1 !important; transform: none !important; }
+}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- ══ 顶部 Header ══ -->
-  <div class="header">
-    <div class="avatar">👨‍💻</div>
-    <div class="header-info">
-      <div class="header-name">何 佳 明</div>
-      <div class="header-title">嵌入式软件工程师 · BSP / ISP · Camera</div>
-      <div class="header-meta">
-        <div class="meta-item"><span class="icon">🎂</span> 2001.07</div>
-        <div class="meta-item"><span class="icon">📍</span> 江西赣州</div>
-        <div class="meta-item"><span class="icon">🎓</span> 控制科学与工程（硕士）</div>
-        <div class="meta-item"><span class="icon">🏫</span> 哈尔滨工程大学（预计2027.06）</div>
-        <div class="meta-item"><span class="icon">📧</span> 19553509791@163.com</div>
-        <div class="meta-item"><span class="icon">🔴</span> 中共党员</div>
-      </div>
+<!-- ══════════════════════════════
+     顶部导航栏
+══════════════════════════════ -->
+<header class="topbar">
+  <div class="topbar-brand">
+    <div class="topbar-avatar">👨‍💻</div>
+    <div>
+      <div class="topbar-name">何 佳 明</div>
+      <div class="topbar-sub">2027年毕业</div>
     </div>
   </div>
 
-  <!-- ══ 主体 ══ -->
-  <div class="body-wrap">
+  <nav class="topbar-nav">
+    <a class="nav-btn active" href="#edu">教育背景</a>
+    <a class="nav-btn" href="#work">实习经历</a>
+    <a class="nav-btn" href="#projects">项目经历</a>
+    <a class="nav-btn" href="#skills">技能特长</a>
+    <a class="nav-btn" href="#awards">科研成果</a>
+    <a class="nav-btn" href="#about">个人陈述</a>
+  </nav>
 
-    <!-- ══ 左侧窄栏 ══ -->
-    <div class="col-left">
+  <div class="topbar-actions">
+    <button class="btn-download" onclick="window.print()">⬇ 导出 PDF</button>
+  </div>
+</header>
 
-      <!-- 外语水平 -->
-      <div class="sec-title" style="margin-top:0">外语水平</div>
-      <div class="tag-group">
-        <span class="tag tag-blue">CET-6</span>
-        <span class="tag tag-blue">CET-4</span>
-        <span class="tag tag-gray">英语读写</span>
-      </div>
+<!-- ══════════════════════════════
+     主体布局
+══════════════════════════════ -->
+<div class="layout">
 
-      <!-- 核心技能 -->
-      <div class="sec-title">核心技能</div>
-
-      <div class="skill-item">
-        <div class="skill-name">Linux Kernel / BSP</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">Camera Driver / ISP</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">C / C++</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">FreeRTOS / STM32</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">Python / Shell</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">AI 部署 / RKNN</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-      </div>
-
-      <!-- 总线协议 -->
-      <div class="sec-title">总线协议</div>
-      <div class="tag-group">
-        <span class="tag tag-blue">I2C</span>
-        <span class="tag tag-blue">SPI</span>
-        <span class="tag tag-blue">UART</span>
-        <span class="tag tag-blue">CSI-2</span>
-        <span class="tag tag-blue">DSI-2</span>
-        <span class="tag tag-blue">USB</span>
-        <span class="tag tag-blue">GMSL2</span>
-      </div>
-
-      <!-- 网络协议 -->
-      <div class="sec-title">网络协议</div>
-      <div class="tag-group">
-        <span class="tag tag-green">TCP/UDP</span>
-        <span class="tag tag-green">MQTT</span>
-        <span class="tag tag-green">RTSP</span>
-        <span class="tag tag-green">RTMP</span>
-        <span class="tag tag-green">NFS</span>
-        <span class="tag tag-green">HTTP</span>
-      </div>
-
-      <!-- 工具链 -->
-      <div class="sec-title">工具 & 框架</div>
-      <div class="tag-group">
-        <span class="tag tag-gray">GDB</span>
-        <span class="tag tag-gray">Crash</span>
-        <span class="tag tag-gray">Ftrace</span>
-        <span class="tag tag-gray">Perf</span>
-        <span class="tag tag-gray">Valgrind</span>
-        <span class="tag tag-gray">V4L2</span>
-        <span class="tag tag-gray">RKMedia</span>
-        <span class="tag tag-gray">FFmpeg</span>
-        <span class="tag tag-gray">Imatest</span>
-        <span class="tag tag-gray">LVGL</span>
-        <span class="tag tag-gray">Qt</span>
-      </div>
-
-      <!-- 个人荣誉（左栏）-->
-      <div class="sec-title">个人荣誉</div>
-      <ul class="honor-list">
-        <li>山东省励志奖学金</li>
-        <li>优秀学生奖学金</li>
-        <li>大学生竞赛奖学金</li>
-        <li>优秀学生干部</li>
-        <li>优秀毕业生</li>
-        <li>优秀志愿者</li>
-        <li>党支部书记</li>
-        <li>数学建模协会 组织部部长</li>
-        <li>中国自动化学会 会员</li>
-      </ul>
-
-    </div><!-- /col-left -->
-
-    <!-- ══ 右侧主栏 ══ -->
-    <div class="col-right">
-
-      <!-- 教育经历 -->
-      <div class="sec-title">
-        <span class="sec-title-icon">🎓</span> 教育经历
-      </div>
-
-      <div class="edu-row">
-        <div class="edu-dot-col">
-          <div class="edu-dot"></div>
-          <div class="edu-line"></div>
-        </div>
-        <div class="edu-body">
-          <div class="edu-school">哈尔滨工程大学</div>
-          <div class="edu-sub">
-            <span class="tag tag-blue">硕士研究生</span>
-            <span class="tag tag-gray">控制科学与工程</span>
-            <span class="tag tag-green">专业前 10%</span>
-          </div>
-          <div class="edu-time">📅 2024.09 — 2027.06（预计）</div>
-        </div>
-      </div>
-
-      <div class="edu-row">
-        <div class="edu-dot-col">
-          <div class="edu-dot"></div>
-        </div>
-        <div class="edu-body">
-          <div class="edu-school">烟台大学</div>
-          <div class="edu-sub">
-            <span class="tag tag-blue">本科</span>
-            <span class="tag tag-gray">轮机工程</span>
-            <span class="tag tag-green">专业前 5%</span>
-          </div>
-          <div class="edu-time">📅 2020.09 — 2024.06</div>
-        </div>
-      </div>
-
-      <!-- 实习经历 -->
-      <div class="sec-title">
-        <span class="sec-title-icon">💼</span> 实习经历
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-header">
-          <div>
-            <div class="exp-company">Momenta 自动驾驶独角兽企业 · 上海</div>
-            <div class="exp-role">BSP 工程师</div>
-          </div>
-          <span class="exp-time">2025.06 — 2025.10</span>
-        </div>
-        <ul class="exp-list">
-          <li>修改基于 Qualcomm 平台下 IMX623、IMX728、OVX3C 等 Sensor 驱动，及 GMSL2 的 MAX96717 加串器 / MAX96712 解串器芯片驱动，实现 Camera Bring up。</li>
-          <li>使用 Ftrace、Perf、Valgrind 等工具对相机进行性能分析与优化，降低丢帧率和系统资源开销。</li>
-          <li>使用 GDB 和 Crash 工具排查 SerDes 芯片物理链路不稳定，定位和分析 Coredump / Panic 问题。</li>
-          <li>对 ADCU 的 BSP、MCU、SWITCH、MF 等模块进行手动编译和烧录。</li>
-        </ul>
-      </div>
-
-      <div class="exp-block">
-        <div class="exp-header">
-          <div>
-            <div class="exp-company">Momenta 自动驾驶独角兽企业 · 苏州</div>
-            <div class="exp-role">ISP 工程师</div>
-          </div>
-          <span class="exp-time">2025.11 — 至今</span>
-        </div>
-        <ul class="exp-list">
-          <li>编写 Shell 和 Python 脚本，开发并封装自动化工具，为部门搭建多域控并行 ISP 仿真工具。</li>
-          <li>和智己客户对接，调试相机 AWB、Clarity、CCM、Denoising 等模块，配合完成天马山项目验收。</li>
-          <li>对相机车载客观场景拍摄，使用 Imatest 软件分析数据；采集和分析相机主观全场景，复现异常现象。</li>
-        </ul>
-      </div>
-
-      <!-- 项目经历 -->
-      <div class="sec-title">
-        <span class="sec-title-icon">🔧</span> 项目经历
-      </div>
-
-      <!-- 项目1 -->
-      <div class="proj-block">
-        <div class="proj-title-row">
-          <div class="proj-title">基于 RK3588 的"赵一鸣"零食店智能识别-监控-收银终端</div>
-          <div class="proj-tags">
-            <span class="tag tag-blue">Linux</span>
-            <span class="tag tag-blue">V4L2</span>
-            <span class="tag tag-blue">RKNN</span>
-            <span class="tag tag-green">RTMP/RTSP</span>
-            <span class="tag tag-green">MQTT</span>
+  <!-- ══ 左侧侧边栏 ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <div class="profile-photo-wrap">
+        <!-- ★ 已移除颜色旋转动画，现在边框颜色固定 -->
+        <div class="profile-photo-ring">
+          <div class="profile-photo">
+            <img src="简历.jpg" alt="何佳明">
           </div>
         </div>
-        <div class="proj-desc">
-          设计并实现了集零食识别、视频存储推流、线上点单于一体的智能系统，全流程独立完成从硬件驱动到业务逻辑开发。
-        </div>
-        <ul class="proj-points">
-          <li><strong>相机 Bring up & Tuning：</strong>基于 V4L2 和 RKMedia 架构，移植 IMX415、OV13850 MIPI 监控相机及 USB 识别相机；支持 8M 相机 Triple DOL HDR。</li>
-          <li><strong>网络传输架构：</strong>提出"高低码流、内外网分离"方案，RTMP 推 1080P 主码流至公网，RTSP 传 720P 子码流至局域网。</li>
-          <li><strong>AI 物品识别：</strong>基于 YOLOv8-PyTorch 训练并优化检测模型，修改 Backbone & Neck；通过 RKNN 工具链量化部署到 RK3588 NPU，推理耗时 ≤ 18ms，mAP@0.5 达 91.3%。</li>
-          <li><strong>DSI 触摸屏移植：</strong>基于 DRM/KMS 框架，完成 panel、backlight、触摸 Input 驱动适配，调试黑屏/花屏/触控漂移/两指缩放异常等问题。</li>
-          <li><strong>高并发服务端：</strong>服务端采用 epoll + 非阻塞 Socket 实现高并发连接管理；MQTT 实现订单状态实时推送，端到端延迟 &lt; 50ms。</li>
-          <li><strong>系统性能优化：</strong>利用 iostat/iotop/vmstat/perf/ftrace 进行 I/O 压测与热点分析，降低 CacheLine miss 和 TLB miss，提升系统读写效能。</li>
-          <li><strong>UART 接收秤数据：</strong>采用 ringbuffer + 协议状态机处理流式数据，解决半包/粘包及错位重同步问题。</li>
-          <li><strong>开机时间优化：</strong>基于 BusyBox 构建极简 rootfs，精简 init 脚本，裁剪 kernel 与 uboot，开机时间从 18s 降至 8s。</li>
-        </ul>
       </div>
+      <div class="sidebar-name">何 佳 明</div>
+      <div class="sidebar-pos">嵌入式软件工程师</div>
+      <div class="sidebar-status">
+        <span class="status-dot"></span>
+        求职中
+      </div>
+      <div class="sidebar-contacts">
+        <div class="contact-row">
+          <div class="contact-icon">🎂</div>
+          <span>2001 年 07 月</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <span>江西 赣州</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📧</div>
+          <span>19553509791@163.com</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🎓</div>
+          <span>硕士 · 控制科学与工程</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🏫</div>
+          <span>哈尔滨工程大学</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🔴</div>
+          <span>中共党员</span>
+        </div>
+      </div>
+    </div>
 
-      <!-- 项目2 -->
-      <div class="proj-block">
-        <div class="proj-title-row">
-          <div class="proj-title">基于 STM32F4 的多任务实时智能运动手环</div>
-          <div class="proj-tags">
-            <span class="tag tag-blue">FreeRTOS</span>
-            <span class="tag tag-blue">STM32</span>
-            <span class="tag tag-green">MQTT</span>
-            <span class="tag tag-green">OTA</span>
+    <nav class="sidebar-menu">
+      <div class="menu-section-label">简历导航</div>
+      <a class="menu-item active" href="#hero" data-section="hero">
+        <div class="menu-icon">👤</div>个人信息
+      </a>
+      <a class="menu-item" href="#edu" data-section="edu">
+        <div class="menu-icon">🎓</div>教育背景
+        <span class="menu-badge">2</span>
+      </a>
+      <a class="menu-item" href="#work" data-section="work">
+        <div class="menu-icon">💼</div>实习经历
+        <span class="menu-badge">2</span>
+      </a>
+      <a class="menu-item" href="#projects" data-section="projects">
+        <div class="menu-icon">🔧</div>项目经历
+        <span class="menu-badge">2</span>
+      </a>
+      <a class="menu-item" href="#skills" data-section="skills">
+        <div class="menu-icon">⚡</div>技能特长
+      </a>
+      <a class="menu-item" href="#awards" data-section="awards">
+        <div class="menu-icon">🏆</div>科研成果
+        <span class="menu-badge">7</span>
+      </a>
+      <a class="menu-item" href="#honors" data-section="honors">
+        <div class="menu-icon">⭐</div>个人荣誉
+      </a>
+      <a class="menu-item" href="#about" data-section="about">
+        <div class="menu-icon">📝</div>个人陈述
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">预计毕业：2027.06</div>
+  </aside>
+
+  <!-- ══ 右侧主内容区 ══ -->
+  <main class="main">
+
+    <!-- 英雄区 -->
+    <div id="hero" class="section visible">
+      <div style="background:linear-gradient(135deg,#0d1b2a 0%,#1b2e45 60%,#1a3a5c 100%);
+                  border-radius:16px;padding:32px 36px;display:flex;align-items:center;
+                  gap:32px;position:relative;overflow:hidden;
+                  box-shadow:0 8px 32px rgba(13,27,42,0.2);margin-bottom:0;">
+        <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;
+                    background:radial-gradient(circle,rgba(30,111,217,0.2) 0%,transparent 70%);"></div>
+        <div style="position:absolute;bottom:-30px;left:220px;width:150px;height:150px;border-radius:50%;
+                    background:radial-gradient(circle,rgba(0,194,212,0.15) 0%,transparent 70%);"></div>
+
+        <div style="flex-shrink:0;position:relative;z-index:1;">
+          <div style="width:110px;height:130px;border-radius:12px;
+                      border:3px solid rgba(30,111,217,0.5);
+                      box-shadow:0 8px 24px rgba(0,0,0,0.3);
+                      background:linear-gradient(135deg,#1e3a5f,#2d5a8e);
+                      display:flex;align-items:center;justify-content:center;
+                      font-size:54px;overflow:hidden;">
+            👨‍💻
+          </div>
+          <div style="margin-top:8px;text-align:center;background:rgba(240,165,0,0.15);
+                      border:1px solid rgba(240,165,0,0.35);border-radius:6px;
+                      padding:3px 6px;font-size:10px;color:#fcd34d;font-weight:700;letter-spacing:0.5px;">
+            🛡 国防七子
           </div>
         </div>
-        <div class="proj-desc">
-          集手势唤醒、心率检测、计算器、步数统计、天气预报和远程升级于一体的智能运动手环，利用 RTC、MPU6050、DMA、OLED 等外设实现多任务并发和低功耗管理。
+
+        <div style="flex:1;position:relative;z-index:1;">
+          <div style="font-size:36px;font-weight:800;color:#fff;letter-spacing:6px;
+                      margin-bottom:5px;text-shadow:0 2px 8px rgba(0,0,0,0.3);">何 佳 明</div>
+          <div style="font-size:14px;color:#00c2d4;letter-spacing:2px;margin-bottom:16px;font-weight:500;">
+            嵌入式软件工程师 · BSP / ISP · Camera
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+            <span style="display:flex;align-items:center;gap:5px;
+                         background:rgba(252,211,77,0.15);border:1px solid rgba(252,211,77,0.35);
+                         color:#fcd34d;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">
+              🛡 哈尔滨工程大学 · 国防七子
+            </span>
+            <span style="display:flex;align-items:center;gap:5px;
+                         background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+                         color:rgba(255,255,255,0.85);padding:4px 12px;border-radius:20px;font-size:12px;">
+              📚 控制科学与工程 · 硕士
+            </span>
+            <span style="display:flex;align-items:center;gap:5px;
+                         background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+                         color:rgba(255,255,255,0.85);padding:4px 12px;border-radius:20px;font-size:12px;">
+              🏢 Momenta 自动驾驶 实习
+            </span>
+            <span style="display:flex;align-items:center;gap:5px;
+                         background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);
+                         color:#4ade80;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">
+              ● 求职中
+            </span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;">
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,0.55);">🎂 2001.07</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,0.55);">📍 江西赣州</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,0.55);">📧 19553509791@163.com</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,0.55);">🔴 中共党员</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,0.55);">📅 预计 2027.06 毕业</span>
+          </div>
         </div>
-        <ul class="proj-points">
-          <li><strong>调度策略：</strong>开启抢占式调度，构建"采集→算法→通信"实时链路，按实时性划分优先级；对计算任务做分段/让出 CPU，结合时间片轮转保证高负载下及时响应。</li>
-          <li><strong>固件 OTA 升级：</strong>采用 Bootloader + Application 双区架构；在 OneNet 平台搭建 MQTT/HTTP 服务器，实现 OTA 远程升级和 IAP 在应用升级；外挂 AT24C02 & W25Q64 支持版本回退。</li>
-          <li><strong>DMA 化数据通路：</strong>I2C/SPI + DMA 采集传感器，UART 使用 DMA + 环形缓冲；DMA 回调仅做置位/通知，数据处理在任务中完成，降低 ISR 时间和 CPU 搬运开销。</li>
-          <li><strong>低功耗管理：</strong>事件驱动替代轮询，任务仅在数据交互时唤醒；启用 Tickless Idle 模式空闲自动进入 Sleep/Stop；EXTI 唤醒后重新初始化时钟树与外设。</li>
-        </ul>
       </div>
+    </div>
 
-      <!-- 科研成果 -->
-      <div class="sec-title">
-        <span class="sec-title-icon">🏆</span> 科研成果 & 科创竞赛
+    <!-- ══ 教育背景 ══ -->
+    <div class="edu-grid">
+
+    <!-- ★ 哈工程卡片 -->
+    <div class="edu-card highlight">
+        <div class="edu-content">
+        <!-- 左侧校徽 + 学校名称 + 专属标签 -->
+        <div class="edu-school-row">
+            <img class="edu-emblem" src="哈工程校徽.png" alt="哈工程校徽" onerror="this.style.display='none';">
+            <div>
+            <div class="edu-school">哈尔滨工程大学</div>
+            <div class="school-sub-tags">
+                <span class="c9-badge">🛡 国防七子 · 双一流</span>
+            </div>
+            </div>
+        </div>
+        <div class="edu-major">控制科学与工程 · 硕士研究生</div>
+        <div class="edu-badges">
+            <span class="badge badge-gold">硕士研究生</span>
+            <span class="badge badge-green">专业前 10%</span>
+            <span class="badge badge-red">国防特色高校</span>
+        </div>
+        <div class="edu-time">📅 2024.09 — 2027.06（预计）</div>
+        </div>
+        <!-- 右侧风景图 (已加宽) -->
+        <img class="edu-scene" src="哈工程风景.png" alt="哈尔滨工程大学风景" onerror="this.style.background='linear-gradient(135deg,#1b2e45,#1e6fd9)';this.style.opacity='0.6';">
+    </div>
+
+    <!-- ★ 烟台大学卡片 -->
+    <div class="edu-card">
+        <div class="edu-content">
+        <!-- 左侧校徽 + 学校名称 + 专属标签 -->
+        <div class="edu-school-row">
+            <img class="edu-emblem" src="烟大校徽.png" alt="烟大校徽" onerror="this.style.display='none';">
+            <div>
+            <div class="edu-school">烟台大学</div>
+            <!-- ★ 标签移动到此处，紧跟学校名称下方 -->
+            <div class="school-sub-tags">
+                <span class="badge badge-purple" style="padding: 2px 6px; font-size: 11px;">省重点高校</span>
+                <span class="badge badge-teal" style="padding: 2px 6px; font-size: 11px;">清北援建</span>
+            </div>
+            </div>
+        </div>
+        <div class="edu-major">轮机工程 · 本科</div>
+        <div class="edu-badges">
+            <span class="badge badge-blue">本科</span>
+            <span class="badge badge-green">专业前 5%</span>
+            <span class="badge badge-navy">优秀毕业生</span>
+        </div>
+        <div class="edu-time">📅 2020.09 — 2024.06</div>
+        </div>
+        <!-- 右侧风景图 (已加宽) -->
+        <img class="edu-scene" src="烟大风景.png" alt="烟台大学风景" onerror="this.style.background='linear-gradient(135deg,#1b2e45,#0e7490)';this.style.opacity='0.6';">
+    </div>
+
+    </div>
+
+    <!-- ══ 实习经历 ══ -->
+    <div id="work" class="section">
+      <div class="sec-header">
+        <div class="sec-icon">💼</div>
+        <div>
+          <div class="sec-title-text">实习经历</div>
+          <div class="sec-title-en">Internship</div>
+        </div>
+        <div class="sec-line"></div>
       </div>
+      <div class="timeline">
 
-      <ul class="award-list">
-        <li>
-          <span class="award-icon">🥇</span>
-          <span>全国大学生五一杯数学建模竞赛<span class="award-badge badge-gold">国家级一等奖</span></span>
-        </li>
-        <li>
-          <span class="award-icon">🥈</span>
-          <span>全国大学生高教社杯数学建模竞赛<span class="award-badge badge-silver">推国家级二等奖</span></span>
-        </li>
-        <li>
-          <span class="award-icon">🥈</span>
-          <span>全国大学生非数学类数学竞赛 A 组<span class="award-badge badge-silver">国家级二等奖</span></span>
-        </li>
-        <li>
-          <span class="award-icon">🏅</span>
-          <span>山东省大学生数学竞赛<span class="award-badge badge-blue">省级二等奖</span></span>
-        </li>
-        <li>
-          <span class="award-icon">📄</span>
-          <span>一种基于博弈论的人机共驾权限分配策略<span class="award-badge badge-blue">会议论文</span></span>
-        </li>
-        <li>
-          <span class="award-icon">📋</span>
-          <span>一种船舶燃气轮机用空气过滤装置<span class="award-badge badge-blue">发明专利</span></span>
-        </li>
-        <li>
-          <span class="award-icon">📋</span>
-          <span>一种基于 RP_RSO_GA 的武器目标分配算法<span class="award-badge badge-blue">发明专利</span></span>
-        </li>
-      </ul>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">Momenta · 自动驾驶独角兽企业 · 上海</div>
+                <div style="margin-top:4px;"><span class="tl-role">⚙️ BSP 工程师</span></div>
+              </div>
+              <div class="tl-time">📅 2025.06 — 2025.10</div>
+            </div>
+            <ul class="tl-list">
+              <li>修改基于 Qualcomm 平台下 <strong>IMX623、IMX728、OVX3C</strong> 等 Sensor 驱动，及 GMSL2 的 MAX96717 加串器 / MAX96712 解串器芯片驱动，实现 Camera Bring up。</li>
+              <li>使用 <strong>Ftrace、Perf、Valgrind</strong> 等工具对相机进行性能分析与优化，降低丢帧率和系统资源开销。</li>
+              <li>使用 <strong>GDB 和 Crash</strong> 工具排查 SerDes 芯片物理链路不稳定，定位和分析 Coredump / Panic 问题。</li>
+              <li>对 ADCU 的 BSP、MCU、SWITCH、MF 等模块进行手动编译和烧录。</li>
+            </ul>
+          </div>
+        </div>
 
-      <!-- 个人陈述 -->
-      <div class="sec-title">
-        <span class="sec-title-icon">📝</span> 个人陈述
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">Momenta · 自动驾驶独角兽企业 · 苏州</div>
+                <div style="margin-top:4px;"><span class="tl-role">📷 ISP 工程师</span></div>
+              </div>
+              <div class="tl-time">📅 2025.11 — 至今</div>
+            </div>
+            <ul class="tl-list">
+              <li>编写 <strong>Shell 和 Python</strong> 脚本，开发并封装自动化工具，为部门搭建多域控并行 ISP 仿真工具。</li>
+              <li>和智己客户对接，调试相机 <strong>AWB、Clarity、CCM、Denoising</strong> 等模块，配合完成天马山项目验收。</li>
+              <li>对相机车载客观场景拍摄，使用 <strong>Imatest</strong> 软件分析数据；采集和分析相机主观全场景，复现异常现象。</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
+    </div>
 
-      <div class="statement">
-        性格开朗，责任心强，沉着冷静，具备较强的团队协作与沟通能力。在校期间参与多项竞赛，抗压能力强，可在高强度下完成既定任务。自学能力强，善于举一反三；对嵌入式软件开发、Camera 驱动与图像处理充满热情，能够在短时间内全力投入目标任务，快速上手新技术栈。
+    <!-- ══ 项目经历 ══ -->
+    <div id="projects" class="section">
+      <div class="sec-header">
+        <div class="sec-icon">🔧</div>
+        <div>
+          <div class="sec-title-text">项目经历</div>
+          <div class="sec-title-en">Projects</div>
+        </div>
+        <div class="sec-line"></div>
       </div>
+      <div class="proj-grid">
 
-    </div><!-- /col-right -->
-  </div><!-- /body-wrap -->
+        <div class="proj-card" id="proj1">
+          <div class="proj-card-top">
+            <div style="flex:1;">
+              <div class="proj-card-title">🏪 基于 RV1126 的「赵一鸣」零食店智能识别-监控-收银终端</div>
+              <div class="proj-card-desc">
+               本项目设计并实现了集零食识别、视频存储推流、线上点单于一体的智能系统。
+              </div>
+            </div>
+            <div class="proj-tags">
+              <span class="badge badge-blue">V4L2</span>
+              <span class="badge badge-blue">RKNN</span>
+              <span class="badge badge-green">RTMP/RTSP</span>
+              <span class="badge badge-green">MQTT</span>
+              <span class="badge badge-gold">YOLOv8</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-toggle" onclick="toggleProj('proj1')">
+              ▶ 展开技术细节（8 项核心实现）
+              <span class="toggle-arrow">▾</span>
+            </div>
+            <div class="proj-points-wrap">
+              <ul class="proj-points">
+                <li><strong>相机 Bring up & Tuning：</strong>基于 V4L2 和 RKMedia 架构，移植 IMX415、OV13850 MIPI 监控相机及 USB 识别相机；支持 8M 相机 Triple DOL HDR。</li>
+                <li><strong>网络传输架构：</strong>提出「高低码流、内外网分离」方案，RTMP 推 1080P 主码流至公网，RTSP 传 720P 子码流至局域网。</li>
+                <li><strong>AI 物品识别：</strong>基于YOLOv8-PyTorch框架完成高精度检测模型的训练与优化，修改了模型的Backbone和Neck网络架构；最终通过RKNN工具链将模型量化并部署至RKNPU，实现端侧实时物品识别。</li>
+                <li><strong>DSI 触摸屏驱动移植：</strong>基于DRM和KMS框架，对panel、backlight和触摸Input驱动适配，使用modetest和evtest工具去调试黑屏/花屏/闪屏/颜色异常，触控漂移/丢点/两指缩放异常抖动等问题。</li>
+                <li><strong>线上外卖系统：</strong>利用MQTT的“发布—客户端订阅”机制，将订单状态变化实时推送至小程序；服务端采用IO多路复用epoll + 非阻塞Socket实现高并发连接管理与消息收发。</li>
+                <li><strong>系统负载与IO性能分析：</strong>综合运用uptime/vmstat监控系统负载及内存指标，排查内存泄漏风险；结合perf/ftrace分析系统热点与内存抖动。针对存储与网络I/O，利用iostat/iotop/dd 进行吞吐量、IOPS与时延压测，定位性能瓶颈，降低CacheLine miss和TLB miss来提升系统整体运行稳定性与读写效能。</li>
+                <li><strong>系统稳定性优化：</strong>引入 Watchdog 守护进程，对相机断连、网络抖动场景进行异常恢复；通过 Valgrind 消除内存泄漏，长跑测试 72h 无异常。</li>
+                <li><strong>Uart实时接收秤数据：</strong>采用 ringbuffer + 协议状态机处理流式数据，解决半包/粘包及错位重同步问题；</li>
+                <li><strong>系统开机时间优化：</strong>基于BusyBox构建极简rootfs、精简init脚本与服务，并进行Linux的kernel与uboot裁剪，显著降低系统启动耗时，从之前的18秒降低至8秒。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-</div><!-- /page -->
+        <div class="proj-card" id="proj2">
+          <div class="proj-card-top">
+            <div style="flex:1;">
+              <div class="proj-card-title">🚗 基于STM32F4的多任务实时智能运动手环</div>
+              <div class="proj-card-desc">
+                本项目设计并实现了集手势唤醒、心率检测、计算器、步数统计、天气预报和远程升级于一体的智能运动手环。利用RTC、MPU6050、DMA和OLED等外设，实现多任务并发和低功耗管理。
+              </div>
+            </div>
+            <div class="proj-tags">
+              <span class="badge badge-navy">FreeRTOS</span>
+              <span class="badge badge-blue">PWM</span>
+              <span class="badge badge-blue">DMA</span>
+              <span class="badge badge-green">时钟树</span>
+              <span class="badge badge-gold">OTA</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-toggle" onclick="toggleProj('proj2')">
+              ▶ 展开技术细节（6 项核心实现）
+              <span class="toggle-arrow">▾</span>
+            </div>
+            <div class="proj-points-wrap">
+              <ul class="proj-points">
+                <li><strong>调度策略设计：</strong>开启移抢占式调度，构建“采集→算法→通信”实时链路，按实时性划分优先级；对计算任务做分段/让出 CPU，结合同级时间片轮转，保证采样与通信在高负载下仍可及时响应。</li>
+                <li><strong>固件升级：</strong>采用了Bootloader + Application 双区架构，划分固件入口与升级区。在 OneNet 平台下搭建好 MQTT 和 HTTP 服务器，然后在MCU 实现 OTA 远程升级和 IAP 在应用升级的功能。外挂了存储器 AT24C02 和 W24Q64 ，可以同时支持版本的更新和回退。</li>
+                <li><strong>DMA 数据通路：</strong>传感器采集采用 I2C/SPI + DMA，UART 采用 DMA + 环形缓冲；DMA 回调只做“置位/通知”，数据处理在任务中完成，降低 ISR 时间与 CPU 搬运开销。</li>
+                <li><strong>低功耗实现：</strong>利用事件驱动机制替代轮询，确保任务仅在数据交互时唤醒；启用 Tickless Idle 模式，空闲自动进入 Sleep/Stop；使用EXTI交互唤醒后重新初始化时钟树与外设。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 技能特长 ══ -->
+    <div id="skills" class="section">
+      <div class="sec-header">
+        <div class="sec-icon">⚡</div>
+        <div>
+          <div class="sec-title-text">技能特长</div>
+          <div class="sec-title-en">Technical Skills</div>
+        </div>
+        <div class="sec-line"></div>
+      </div>
+      <div class="skills-layout">
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-card-icon">💻</span>
+            <span class="skill-card-title">编程语言</span>
+          </div>
+          <div class="skill-tags">
+            <span class="stag stag-navy">C / C++</span>
+            <span class="stag stag-blue">Python</span>
+            <span class="stag stag-cyan">Shell</span>
+            <span class="stag stag-gray">Lingo</span>
+            <span class="stag stag-gray">MATLAB</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-card-icon">🐧</span>
+            <span class="skill-card-title">操作系统 / 内核</span>
+          </div>
+          <div class="skill-tags">
+            <span class="stag stag-navy">Linux 驱动开发</span>
+            <span class="stag stag-blue">V4L2 框架</span>
+            <span class="stag stag-cyan">RKMedia</span>
+            <span class="stag stag-green">设备树</span>
+            <span class="stag stag-gray">FreeRTOS</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-card-icon">📷</span>
+            <span class="skill-card-title">Camera / ISP</span>
+          </div>
+          <div class="skill-tags">
+            <span class="stag stag-navy">Sensor Bring up</span>
+            <span class="stag stag-blue">MIPI CSI-2</span>
+            <span class="stag stag-cyan">GMSL2 / SerDes</span>
+            <span class="stag stag-green">AWB / CCM</span>
+            <span class="stag stag-purple">Imatest</span>
+            <span class="stag stag-orange">ISP Tuning</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-card-icon">🤖</span>
+            <span class="skill-card-title">AI / 深度学习</span>
+          </div>
+          <div class="skill-tags">
+            <span class="stag stag-navy">PyTorch</span>
+            <span class="stag stag-blue">YOLOv8</span>
+            <span class="stag stag-cyan">RKNN 部署</span>
+            <span class="stag stag-green">TensorRT</span>
+            <span class="stag stag-orange">模型量化</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-card-icon">🔌</span>
+            <span class="skill-card-title">总线 / 协议</span>
+          </div>
+          <div class="skill-tags">
+            <span class="stag stag-navy">I2C / UART</span>
+            <span class="stag stag-blue">CSI / DSI</span>
+            <span class="stag stag-green">MQTT</span>
+            <span class="stag stag-gray">RTMP / RTSP</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-card-icon">🛠</span>
+            <span class="skill-card-title">工具 / 平台</span>
+          </div>
+          <div class="skill-tags">
+            <span class="stag stag-navy">GDB / Crash</span>
+            <span class="stag stag-blue">Ftrace / Perf</span>
+            <span class="stag stag-green">Git / Repo</span>
+            <span class="stag stag-gray">Cmake / Qmake</span>
+            <span class="stag stag-orange">FFmpeg</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 科研成果 ══ -->
+    <div id="awards" class="section">
+      <div class="sec-header">
+        <div class="sec-icon">🏆</div>
+        <div>
+          <div class="sec-title-text">科研成果 & 竞赛奖项</div>
+          <div class="sec-title-en">Awards & Publications</div>
+        </div>
+        <div class="sec-line"></div>
+      </div>
+      <div class="awards-list">
+
+        <div class="award-item">
+          <div class="award-medal medal-gold">🥇</div>
+          <div class="award-content">
+            <div class="award-name">全国大学生五一杯数学建模竞赛</div>
+            <span class="award-level level-national-gold">🏅 全国一等奖</span>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-medal medal-silver">🥈</div>
+          <div class="award-content">
+            <div class="award-name">全国大学生高教社杯数学建模竞赛</div>
+            <span class="award-level level-national-silver">🥈 推全国二等奖</span>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-medal medal-blue">🏅</div>
+          <div class="award-content">
+            <div class="award-name">全国大学生非数学类类数学竞赛A组</div>
+            <span class="award-level level-province">🥈 推全国二等奖</span>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-medal medal-blue">🏅</div>
+          <div class="award-content">
+            <div class="award-name">山东省大学生数学竞赛</div>
+            <span class="award-level level-province">🌏 省级二等奖</span>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-medal medal-paper">📄</div>
+          <div class="award-content">
+            <div class="award-name">一种基于博弈论的人机共驾权限分配策略</div>
+            <span class="award-level level-paper">📖 期刊论文</span>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-medal medal-paper">📄</div>
+          <div class="award-content">
+            <div class="award-name">一种船舶燃气轮机用空气过滤装置</div>
+            <span class="award-level level-paper">🔒 发明专利</span>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-medal medal-paper">📜</div>
+          <div class="award-content">
+            <div class="award-name">一种基于RP_RSO_GA的武器目标分配算法</div>
+            <span class="award-level level-patent">🔒 发明专利</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 个人荣誉 ══ -->
+    <div id="honors" class="section">
+      <div class="sec-header">
+        <div class="sec-icon">⭐</div>
+        <div>
+          <div class="sec-title-text">个人荣誉</div>
+          <div class="sec-title-en">Honors</div>
+        </div>
+        <div class="sec-line"></div>
+      </div>
+      <div class="honor-grid">
+        <div class="honor-item"><span class="honor-star">★</span>山东省政府励志奖学金</div>
+        <div class="honor-item"><span class="honor-star">★</span>校级优秀奖学金 </div>
+        <div class="honor-item"><span class="honor-star">★</span>优秀毕业生</div>
+        <div class="honor-item"><span class="honor-star">★</span>优秀党员</div>
+        <div class="honor-item"><span class="honor-star">★</span>优秀学生干部</div>
+        <div class="honor-item"><span class="honor-star">★</span>中国自动化学会会员</div>
+      </div>
+    </div>
+
+    <!-- ══ 个人陈述 ══ -->
+    <div id="about" class="section">
+      <div class="sec-header">
+        <div class="sec-icon">📝</div>
+        <div>
+          <div class="sec-title-text">个人陈述</div>
+          <div class="sec-title-en">About Me</div>
+        </div>
+        <div class="sec-line"></div>
+      </div>
+      <div class="statement-card">
+        <p class="statement-text">
+          本人现就读于<strong>哈尔滨工程大学</strong>控制科学与工程专业，预计 2027 年 6 月硕士毕业。
+          本科就读于<strong>烟台大学</strong>，以<strong>专业前 5%</strong> 的成绩获得保研资格，荣获<strong>多项奖学金</strong>及多项省级竞赛一等奖。
+          <br><br>
+          在 <strong>Momenta</strong> 自动驾驶企业先后完成 BSP 和 ISP 两段实习，具备
+          <strong>Camera Bring up → SerDes 调试 → ISP Tuning</strong> 全链路工程经验，
+          熟练使用 Ftrace / GDB / Crash 等工具进行性能分析与故障定位。
+          <br><br>
+          在校期间参与了许多竞赛，<strong>抗压能力强</strong>，可以高强度中完成指定的任务，
+          同时有<strong>很强的自学能力和学习能力</strong>喜欢在学习中思考，喜欢举一反三。
+          <br><br>
+          性格踏实、热爱底层系统与硬件软件协同开发，期望在
+          <strong>嵌入式 / BSP / Camera </strong>方向持续努力，为团队创造实际价值。
+        </p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+/* ══ 项目详情展开/收起 ══ */
+function toggleProj(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+  const btn = card.querySelector('.proj-toggle');
+  btn.innerHTML = card.classList.contains('open')
+    ? '▼ 收起技术细节 <span class="toggle-arrow" style="transform:rotate(180deg)">▾</span>'
+    : '▶ 展开技术细节 <span class="toggle-arrow">▾</span>';
+}
+
+/* ══ 滚动显示动画 ══ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+/* ══ 侧边栏高亮跟随滚动 ══ */
+const sections = ['hero','edu','work','projects','skills','awards','honors','about'];
+
+const scrollSpy = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      document.querySelectorAll('.menu-item').forEach(m => {
+        m.classList.toggle('active', m.dataset.section === id);
+      });
+      document.querySelectorAll('.nav-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) scrollSpy.observe(el);
+});
+</script>
 </body>
 </html>
